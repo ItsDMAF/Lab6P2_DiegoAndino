@@ -1,22 +1,34 @@
-
 package lab6p2_diegoandino;
 
 import java.util.Date;
 
 public class Lanzamiento {
-    protected String titulo;
-    protected Date fechaLanz;
-    protected int contLikes;
+protected String titulo;
+    protected Date fechaLanzamiento;
+    protected int conteoLikes;
+    protected int identidad;
+    protected String creador;
 
     public Lanzamiento() {
     }
 
-    public Lanzamiento(String titulo, Date fechaLanzamiento, int conteoLikes) {
+    public Lanzamiento(String titulo, Date fechaLanzamiento, int conteoLikes, int id, String creador) {
         this.titulo = titulo;
-        this.fechaLanz = fechaLanzamiento;
-        this.contLikes = conteoLikes;
+        this.fechaLanzamiento = fechaLanzamiento;
+        this.conteoLikes = conteoLikes;
+        this.identidad = identidad;
+        this.creador = creador;
     }
 
+    public int getIdentidad() {
+        return identidad;
+    }
+
+    public void setIdentidad(int id) {
+        this.identidad = identidad;
+    }
+    
+    
     public String getTitulo() {
         return titulo;
     }
@@ -26,23 +38,31 @@ public class Lanzamiento {
     }
 
     public Date getFechaLanzamiento() {
-        return fechaLanz;
+        return fechaLanzamiento;
     }
 
     public void setFechaLanzamiento(Date fechaLanzamiento) {
-        this.fechaLanz = fechaLanzamiento;
+        this.fechaLanzamiento = fechaLanzamiento;
+    }
+
+    public String getCreador() {
+        return creador;
+    }
+
+    public void setCreador(String creador) {
+        this.creador = creador;
     }
 
     public int getConteoLikes() {
-        return contLikes;
+        return conteoLikes;
     }
 
     public void setConteoLikes(int conteoLikes) {
-        this.contLikes = conteoLikes;
+        this.conteoLikes = conteoLikes;
     }
 
     @Override
     public String toString() {
-        return titulo + ":" + contLikes + ":" + fechaLanz;
+        return titulo + ":" + conteoLikes + ":" + fechaLanzamiento;
     }
 }

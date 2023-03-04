@@ -1,19 +1,24 @@
-
 package lab6p2_diegoandino;
 
+import java.util.ArrayList;
+
 public class Cancion {
+
     private String titulo;
     private int tiempo;
     private int albumPer;
+    private ArrayList<Integer> playlists = new ArrayList();
 
     public Cancion() {
     }
 
-    public Cancion(String titulo, int tiempo,  int albumPerteneciente) {
+    public Cancion(String titulo, int tiempo, int albumPer) {
         this.titulo = titulo;
         this.tiempo = tiempo;
         this.albumPer = albumPer;
     }
+
+   
 
     public String getTitulo() {
         return titulo;
@@ -39,9 +44,26 @@ public class Cancion {
         this.albumPer = albumPerteneciente;
     }
 
+    public int getAlbumPer() {
+        return albumPer;
+    }
+
+    public void setAlbumPer(int albumPer) {
+        this.albumPer = albumPer;
+    }
+
+    public ArrayList<Integer> getPlaylists() {
+        return playlists;
+    }
+
+    public void setPlaylists(ArrayList<Integer> playlists) {
+        this.playlists = playlists;
+    }
+
+   
     @Override
     public String toString() {
         return titulo + " - " + tiempo + " : " + albumPer;
     }
-    
+
 }

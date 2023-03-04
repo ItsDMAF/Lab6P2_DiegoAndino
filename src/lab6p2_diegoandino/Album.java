@@ -8,7 +8,7 @@ public class Album extends Lanzamiento {
     private ArrayList<Cancion> canciones = new ArrayList();
     private int cantCanciones = 0;
 
-    public Album() {
+    public Album(String par, Date date, int parseInt, int parseInt1) {
         super();
     }
 

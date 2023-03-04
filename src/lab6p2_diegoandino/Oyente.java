@@ -1,11 +1,11 @@
-
 package lab6p2_diegoandino;
 
 import java.util.ArrayList;
 
-public class Oyente extends Usuario{
-     private ArrayList<Cancion> canciones = new ArrayList();
-    private ArrayList<ListaRep> Creadas  = new ArrayList();
+public class Oyente extends Usuario {
+
+    private ArrayList<Cancion> canciones = new ArrayList();
+    private ArrayList<ListaRep> Creadas = new ArrayList();
     private ArrayList<ListaRep> ConLike = new ArrayList();
 
     public Oyente() {
@@ -47,9 +47,9 @@ public class Oyente extends Usuario{
 
     @Override
     public void setEdad(int edad) throws Exception {
-        if(edad > 12){
+        if (edad > 12) {
             this.edad = edad;
-        }else{
+        } else {
             throw new Exception("Edad debe ser mayor a 12");
         }
     }
@@ -58,5 +58,5 @@ public class Oyente extends Usuario{
     public String toString() {
         return super.toString() + " - Oyente";
     }
-    
+
 }

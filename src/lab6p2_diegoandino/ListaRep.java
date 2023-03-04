@@ -8,6 +8,7 @@ public class ListaRep {
     private int contLikes;
     private ArrayList<Cancion> canciones = new ArrayList();
     private String usuario;
+    private int identidad;
 
     public ListaRep() {
     }
@@ -49,6 +50,23 @@ public class ListaRep {
     public void setCanciones(ArrayList<Cancion> canciones) {
         this.canciones = canciones;
     }
+
+    public int getContLikes() {
+        return contLikes;
+    }
+
+    public void setContLikes(int contLikes) {
+        this.contLikes = contLikes;
+    }
+
+    public int getIdentidad() {
+        return identidad;
+    }
+
+    public void setIdentidad(int identidad) {
+        this.identidad = identidad;
+    }
+    
 
     @Override
     public String toString() {
