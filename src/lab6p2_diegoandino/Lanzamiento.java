@@ -5,7 +5,7 @@ import java.util.Date;
 public class Lanzamiento {
 protected String titulo;
     protected Date fechaLanzamiento;
-    protected int conteoLikes;
+    protected int contLikes;
     protected int identidad;
     protected String creador;
 
@@ -15,7 +15,7 @@ protected String titulo;
     public Lanzamiento(String titulo, Date fechaLanzamiento, int conteoLikes, int id, String creador) {
         this.titulo = titulo;
         this.fechaLanzamiento = fechaLanzamiento;
-        this.conteoLikes = conteoLikes;
+        this.contLikes = contLikes;
         this.identidad = identidad;
         this.creador = creador;
     }
@@ -54,15 +54,15 @@ protected String titulo;
     }
 
     public int getConteoLikes() {
-        return conteoLikes;
+        return contLikes;
     }
 
     public void setConteoLikes(int conteoLikes) {
-        this.conteoLikes = conteoLikes;
+        this.contLikes = contLikes;
     }
 
     @Override
     public String toString() {
-        return titulo + ":" + conteoLikes + ":" + fechaLanzamiento;
+        return titulo + ":" + contLikes + ":" + fechaLanzamiento;
     }
 }

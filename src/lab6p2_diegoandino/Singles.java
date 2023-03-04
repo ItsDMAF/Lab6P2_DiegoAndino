@@ -6,7 +6,7 @@ import java.util.Date;
 public class Singles extends Lanzamiento {
       private Cancion cancion;
 
-    public Singles() {
+    public Singles(String par, Date date, int parseInt, int parseInt1) {
         super();
     }
 

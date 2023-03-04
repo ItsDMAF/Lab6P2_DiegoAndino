@@ -14,11 +14,11 @@ import java.util.logging.Logger;
 
 public class Administraje {
 
-    private File fUsuarios;
-    private File fLanzamientos;
-    private File fCanciones;
-    private File fListaReproduccion;
-    private File bitacora;
+    private File fileUsuarios;
+    private File fileLanzamientos;
+    private File fileCanciones;
+    private File fileListaReproduccion;
+    private File filebitacora;
 
     private ArrayList<Usuario> usuarios = new ArrayList();
     private ArrayList<Lanzamiento> lanzamientos = new ArrayList();
@@ -28,44 +28,44 @@ public class Administraje {
     public Administraje() {
     }
 
-    public Administraje(String d, String d2, String d3, String d4, String d5) {
-        fUsuarios = new File(d);
-        fLanzamientos = new File(d2);
-        fCanciones = new File(d3);
-        fListaReproduccion = new File(d4);
-        bitacora = new File(d5);
+    public Administraje(String doc1, String doc2, String doc3, String doc4, String doc5) {
+        fileUsuarios = new File(doc1);
+        fileLanzamientos = new File(doc2);
+        fileCanciones = new File(doc3);
+        fileListaReproduccion = new File(doc4);
+        filebitacora = new File(doc5);
     }
 
     public File getfUsuarios() {
-        return fUsuarios;
+        return fileUsuarios;
     }
 
     public void setfUsuarios(File fUsuarios) {
-        this.fUsuarios = fUsuarios;
+        this.fileUsuarios = fUsuarios;
     }
 
     public File getfLanzamientos() {
-        return fLanzamientos;
+        return fileLanzamientos;
     }
 
     public void setfLanzamientos(File fLanzamientos) {
-        this.fLanzamientos = fLanzamientos;
+        this.fileLanzamientos = fLanzamientos;
     }
 
     public File getfCanciones() {
-        return fCanciones;
+        return fileCanciones;
     }
 
     public void setfCanciones(File fCanciones) {
-        this.fCanciones = fCanciones;
+        this.fileCanciones = fCanciones;
     }
 
     public File getfListaReproduccion() {
-        return fListaReproduccion;
+        return fileListaReproduccion;
     }
 
     public void setfListaReproduccion(File fListaReproduccion) {
-        this.fListaReproduccion = fListaReproduccion;
+        this.fileListaReproduccion = fListaReproduccion;
     }
 
     public ArrayList<Usuario> getUsuarios() {
@@ -103,10 +103,10 @@ public class Administraje {
     public void cargarArchivos() {
 
         try {
-            Scanner userleer = new Scanner(fUsuarios);
-            Scanner lanzaleer = new Scanner(fLanzamientos);
-            Scanner cancleer = new Scanner(fCanciones);
-            Scanner listleer = new Scanner(fListaReproduccion);
+            Scanner userleer = new Scanner(fileUsuarios);
+            Scanner lanzaleer = new Scanner(fileLanzamientos);
+            Scanner cancleer = new Scanner(fileCanciones);
+            Scanner listleer = new Scanner(fileListaReproduccion);
 //USER--------------------------------------------------------------------------
             while (userleer.hasNextLine()) {
                 String temp = userleer.nextLine();
@@ -152,9 +152,9 @@ public class Administraje {
 
                 Cancion c = new Cancion(array[0], Integer.parseInt(array[1]), Integer.parseInt(array[2]));
 
-                String[] arr2 = array[3].split(",");
+                String[] array2 = array[3].split(",");
 
-                for (String string : arr2) {
+                for (String string : array2) {
                     c.getPlaylists().add(Integer.parseInt(string));
                     for (ListaRep l : listas) {
                         if (l.getIdentidad() == Integer.parseInt(string)) {
@@ -188,7 +188,7 @@ public class Administraje {
 //ESCRIBE-----------------------------------------------------------------------
     public void escribeUser() {
         try {
-            FileWriter escriba = new FileWriter(fUsuarios, false);
+            FileWriter escriba = new FileWriter(fileUsuarios, false);
             BufferedWriter bw = new BufferedWriter(escriba);
             for (Usuario u : usuarios) {
 
@@ -206,11 +206,10 @@ public class Administraje {
             Logger.getLogger(Administraje.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
     public void escribeCanciones() {
 
         try {
-            FileWriter escriba = new FileWriter(fCanciones, false);
+            FileWriter escriba = new FileWriter(fileCanciones, false);
             BufferedWriter bw = new BufferedWriter(escriba);
 
             for (Cancion c : canciones) {
@@ -230,10 +229,9 @@ public class Administraje {
         }
 
     }
-
     public void escribeLanzamientos() {
         try {
-            FileWriter escriba = new FileWriter(fLanzamientos);
+            FileWriter escriba = new FileWriter(fileLanzamientos);
             BufferedWriter bw = new BufferedWriter(escriba);
 
             for (Lanzamiento l : lanzamientos) {
@@ -250,10 +248,9 @@ public class Administraje {
             Logger.getLogger(Administraje.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
     public void escribeList() {
         try {
-            FileWriter escriba = new FileWriter(fListaReproduccion);
+            FileWriter escriba = new FileWriter(fileListaReproduccion);
             BufferedWriter bw = new BufferedWriter(escriba);
             for (ListaRep r : listas) {
                 bw.write(r.getNombre() + "/" + r.getConteoLikes() + "/" + r.getUsuario() + "/" + r.getIdentidad());
@@ -265,10 +262,9 @@ public class Administraje {
             Logger.getLogger(Administraje.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
     public void escribeBitacora(Usuario u) {
         try {
-            FileWriter escriba = new FileWriter(bitacora);
+            FileWriter escriba = new FileWriter(filebitacora);
             BufferedWriter bw = new BufferedWriter(escriba);
             bw.write(u.getUsername() + "/");
             if (u instanceof Oyente) {

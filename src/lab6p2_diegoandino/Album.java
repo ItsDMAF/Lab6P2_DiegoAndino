@@ -13,7 +13,7 @@ public class Album extends Lanzamiento {
     }
 
     public Album(String titulo, Date fechaLanzamiento, int conteoLikes) {
-        super(titulo, fechaLanzamiento, conteoLikes);
+        super();
     }
 
     public void addCancion(Cancion c) {
